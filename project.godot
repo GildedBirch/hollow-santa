@@ -11,8 +11,22 @@ config_version=5
 [application]
 
 config/name="hollow-santa"
+run/main_scene="uid://bf8okmeiwy4f6"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://_assets/icons/icon.svg"
+
+[display]
+
+window/size/viewport_width=1024
+window/size/viewport_height=768
+
+[file_customization]
+
+folder_colors={
+"res://_assets/": "gray",
+"res://_meta/": "gray",
+"res://_resources/": "gray"
+}
 
 [rendering]
 
