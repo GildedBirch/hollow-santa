@@ -1,9 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://btsm3ijw4prfp"]
+[gd_scene load_steps=6 format=3 uid="uid://btsm3ijw4prfp"]
 
 [ext_resource type="PackedScene" uid="uid://dhx1mamjvmf0r" path="res://player/player.tscn" id="1_v4005"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p7jxe"]
 size = Vector2(511, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahg4f"]
+size = Vector2(83, 83)
+
+[sub_resource type="GDScript" id="GDScript_v4005"]
+script/source = "extends StaticBody2D
+
+
+func take_damage(_damage: int) -> void:
+	pass
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v4005"]
+size = Vector2(35, 19)
 
 [node name="GameWorld" type="Node"]
 
@@ -20,11 +34,50 @@ offset_top = -10.0
 offset_right = 501.0
 offset_bottom = 9.0
 
-[node name="ColorRect2" type="ColorRect" parent="StaticBody2D"]
-offset_left = 182.0
-offset_top = -25.0
-offset_right = 217.0
-offset_bottom = -6.0
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(254, 493)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(31.5, -24.5)
+shape = SubResource("RectangleShape2D_ahg4f")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D2"]
+offset_left = -10.0
+offset_top = -66.0
+offset_right = 73.0
+offset_bottom = 17.0
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 416.0
+offset_top = 491.0
+offset_right = 451.0
+offset_bottom = 510.0
+color = Color(1, 0, 0, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ColorRect2"]
+collision_layer = 4
+collision_mask = 4
+script = SubResource("GDScript_v4005")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect2/StaticBody2D"]
+position = Vector2(17.5, 9.5)
+shape = SubResource("RectangleShape2D_v4005")
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = 343.0
+offset_top = 435.0
+offset_right = 378.0
+offset_bottom = 454.0
+color = Color(1, 0, 0, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ColorRect3"]
+collision_layer = 4
+collision_mask = 4
+script = SubResource("GDScript_v4005")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect3/StaticBody2D"]
+position = Vector2(17.5, 9.5)
+shape = SubResource("RectangleShape2D_v4005")
 
 [node name="Player" parent="." instance=ExtResource("1_v4005")]
 position = Vector2(499, 497)
