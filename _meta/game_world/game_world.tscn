@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://btsm3ijw4prfp"]
+[gd_scene load_steps=7 format=3 uid="uid://btsm3ijw4prfp"]
 
 [ext_resource type="PackedScene" uid="uid://dhx1mamjvmf0r" path="res://player/player.tscn" id="1_v4005"]
+[ext_resource type="PackedScene" uid="uid://j1giykdqn12m" path="res://gingerbread/gingerbread.tscn" id="2_ahg4f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p7jxe"]
-size = Vector2(511, 19)
+size = Vector2(1013, 19)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ahg4f"]
 size = Vector2(83, 83)
@@ -25,13 +26,13 @@ size = Vector2(35, 19)
 position = Vector2(254, 520)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(245.5, -0.5)
+position = Vector2(496.5, -0.5)
 shape = SubResource("RectangleShape2D_p7jxe")
 
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
 offset_left = -10.0
 offset_top = -10.0
-offset_right = 501.0
+offset_right = 1003.0
 offset_bottom = 9.0
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
@@ -81,3 +82,15 @@ shape = SubResource("RectangleShape2D_v4005")
 
 [node name="Player" parent="." instance=ExtResource("1_v4005")]
 position = Vector2(499, 497)
+
+[node name="Gingerbread" parent="." instance=ExtResource("2_ahg4f")]
+position = Vector2(708, 448)
+
+[node name="Gingerbread2" parent="." instance=ExtResource("2_ahg4f")]
+position = Vector2(782, 448)
+
+[node name="Gingerbread3" parent="." instance=ExtResource("2_ahg4f")]
+position = Vector2(864, 448)
+
+[node name="Gingerbread4" parent="." instance=ExtResource("2_ahg4f")]
+position = Vector2(940, 448)

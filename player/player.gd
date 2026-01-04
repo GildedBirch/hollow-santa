@@ -5,6 +5,7 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 @onready var attack_component: AttackComponent = %AttackComponent
+@onready var sprite: AnimatedSprite2D = %Sprite
 
 
 func _ready() -> void:
@@ -21,8 +22,11 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("left", "right")
 	if direction:
 		velocity.x =+ direction * SPEED
+		sprite.animation = &"Move"
+		sprite.flip_h = true if direction < 0 else false
 	else:
 		velocity.x = move_toward(velocity.x, 0, 20)
+		sprite.animation = &"Idle"
 
 	move_and_slide()
 

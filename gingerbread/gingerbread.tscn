@@ -1,0 +1,104 @@
+[gd_scene load_steps=13 format=3 uid="uid://j1giykdqn12m"]
+
+[ext_resource type="Script" uid="uid://cs733knwbegl0" path="res://gingerbread/gingerbread.gd" id="1_n8ky6"]
+[ext_resource type="Texture2D" uid="uid://d1wj5abvvleef" path="res://_assets/sprites/gingerbread-Sheet.png" id="1_wj401"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n8ky6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppvdi"]
+atlas = ExtResource("1_wj401")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wcwq"]
+atlas = ExtResource("1_wj401")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vuafq"]
+atlas = ExtResource("1_wj401")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1p2ok"]
+atlas = ExtResource("1_wj401")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2b7a"]
+atlas = ExtResource("1_wj401")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dr4nv"]
+atlas = ExtResource("1_wj401")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjsqj"]
+atlas = ExtResource("1_wj401")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wygm8"]
+atlas = ExtResource("1_wj401")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hr1rb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ppvdi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1wcwq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vuafq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1p2ok")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2b7a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dr4nv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjsqj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wygm8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjsqj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dr4nv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2b7a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1p2ok")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vuafq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1wcwq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Gingerbread" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+input_pickable = false
+script = ExtResource("1_n8ky6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_n8ky6")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_hr1rb")
+autoplay = "default"
+frame_progress = 0.038557854
