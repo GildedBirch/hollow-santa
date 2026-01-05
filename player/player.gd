@@ -33,3 +33,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_body_hit(dir: Vector2) -> void:
 	velocity = -dir * 450.0
+
+
+func take_damage(dmg: int) -> void:
+	SignalBus.player.points_gained.emit(dmg)
